@@ -1,12 +1,16 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
+//higher order component withRouter, takes component as argument and returns modified component, provides our component access to router
 import "../menu-item/menu-item.styles.scss";
 
-const MenuItem = ({ title, imageUrl, size }) => (
+const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
   //destructuring props to use our title prop
   //passed from directory component
   //string interpelation {`${}'}to bring in our size properties and then style
   //allows us much more flexibility to dynamicly build and style our components
-  <div className={`${size} menu-item`}>
+    
+    //using match and history from router props
+  <div className={`${size} menu-item`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
     <div
       className="background-image"
       style={{ backgroundImage: `url(${imageUrl})` }}
@@ -20,4 +24,5 @@ const MenuItem = ({ title, imageUrl, size }) => (
   </div>
 );
 
-export default MenuItem;
+//returns upgraded MenuItem component, provides access to history props etc in router
+export default withRouter(MenuItem);

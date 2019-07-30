@@ -12,7 +12,8 @@
 
     &:hover {
         cursor: pointer;
- //any element named background-image will be scaled inside of menu-item
+
+        //any element named background-image will be scaled inside of menu-item
         & .background-image {
             transform: scale(1.1);
             transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
