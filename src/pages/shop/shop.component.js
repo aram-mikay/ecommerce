@@ -11,19 +11,16 @@ export class ShopPage extends Component {
       collections: SHOP_DATA
     };
   }
-    render()
-    {
-        //destructuring our collections
-        const { collections } = this.state;
-      return (
-          <div className="shop-page">
-              {
-                  collections.map(({id, ...otherCollectionProps}) => (
-                      <CollectionPreview key={id} {...otherCollectionProps}/>
-                  ))
-              }
-        </div>
-    )
+  render() {
+    //destructuring our collections
+    const { collections } = this.state;
+    return (
+      <div className="shop-page">
+        {collections.map(({ id, ...otherCollectionProps }) => (
+          <CollectionPreview key={id} {...otherCollectionProps} />
+        ))}
+      </div>
+    );
   }
 }
 

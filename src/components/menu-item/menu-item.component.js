@@ -9,7 +9,7 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
   //string interpelation {`${}'}to bring in our size properties and then style
   //allows us much more flexibility to dynamicly build and style our components
     
-    //using match and history from router props
+    //using match and history from router props coming from withRouter High order function HOF
   <div className={`${size} menu-item`} onClick={() => history.push(`${match.url}${linkUrl}`)}>
     <div
       className="background-image"
@@ -25,4 +25,5 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
 );
 
 //returns upgraded MenuItem component, provides access to history props etc in router
+//withRouter avoids prop drilling/tunneling
 export default withRouter(MenuItem);

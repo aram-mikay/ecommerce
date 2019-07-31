@@ -8,10 +8,12 @@ const CollectionPreview = ({title, items}) => (
         <div className='preview'>
             {items
             .filter((item, index) => index < 4)
-            .map(({id, ...otherItemProps}) => (
+                .map(({ id, ...otherItemProps }) => (
+                    <CollectionItem key={id}{...otherItemProps} />
+                    
                 //data coming from shop.data
                 //all these function calls will be called and re-rendered anytime the compoennt is used and re-rendered
-                <CollectionItem key={id}{...otherItemProps}/>
+                
            ))}
         </div>
     </div>

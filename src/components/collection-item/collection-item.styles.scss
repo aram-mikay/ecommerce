@@ -1,4 +1,4 @@
-.collection-item{
+.collection-item {
     width: 22%;
     display: flex;
     flex-direction: column;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.image{
+.image {
     width: 100%;
     height: 95%;
     background-size: cover;
@@ -14,7 +14,7 @@
     margin-bottom: 5px;
 }
 
-.collection-footer{
+.collection-footer {
     width: 100%;
     height: 5%;
     display: flex;
@@ -22,7 +22,7 @@
     font-size: 18px;
 }
 
-.name{
+.name {
     width: 90%;
     margin-bottom: 15px;
 }
