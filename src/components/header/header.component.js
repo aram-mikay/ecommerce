@@ -25,7 +25,7 @@ const Header = ({ currentUser }) => (
       </Link>
       {/* conditional rendering for sign in/out link depening on currentUser state  */}
       {currentUser ? (
-        <div classNam="option" onClick={() => auth.signOut()}>
+        <div className="option" onClick={() => auth.signOut()}>
           SIGN OUT
         </div>
       ) : (
