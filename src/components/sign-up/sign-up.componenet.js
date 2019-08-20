@@ -49,7 +49,7 @@ class SignUp extends React.Component
             await createUserProfileDocument(user, { displayName });
         } catch (error)
         {
-            console.error(error);
+            console.log(error);
         }
 
     };

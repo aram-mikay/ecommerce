@@ -53,10 +53,9 @@ class App extends React.Component {
               id: snapShot.id,
               ...snapShot.data()
             }
-          }, () => console.log(this.state))
+          });
           //console log in set state as second parameter, since set state is async and does not complete immedietely, so once setState makes bulk update then clog will fire
 
-          console.log(this.state);
         });
 
       }
