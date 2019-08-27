@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "./pages/shop/shop.component";
@@ -66,12 +66,17 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
-          <Route path="/signin" component={SignInAndSignUpPage} />
+          <Route exact path="/signin" render={() => this.props.currentUser ? (<Redirect to='/' />) : <SignInAndSignUpPage />} />
+          {/* redirecting our users if signed in so they do not mess with auth flow */}
         </Switch>
       </div>
     );
   }
 }
+
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
 
 const mapDispatchToProps = dispatch => ({
   //dispatch - way for redux to know that the object being passed is an action object being passed to every reducer
@@ -79,6 +84,6 @@ const mapDispatchToProps = dispatch => ({
 });
 //our app doesnt need currentUser anymore we will use m
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App);

@@ -1,5 +1,5 @@
 //function that takes two properties, previous state and action
-
+import { UserActionTypes } from './user.types';
 
 //represents the initial state of this reducer
 const INITIAL_STATE = {
@@ -14,7 +14,7 @@ const userReducer = (state = INITIAL_STATE, action) =>
     //every reducer receives every action that gets fired, even if it's irrelevant, the reason we return state by defualt is because none of the actions may match the type we are looking for
     switch (action.type)
     {
-        case 'SET_CURRENT_USER':
+        case UserActionTypes.SET_CURRENT_USER:
             return {
                 //spreading state
                 ...state,
