@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux'; 
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { auth } from "../../firebase/firebase.utils";
 
@@ -37,4 +38,12 @@ const Header = ({ currentUser }) => (
   </div>
 );
 
-export default Header;
+//mapStateToProps and connect will be used anywhere we need to pass our state to props
+
+//state is the root reducer, allows us to access state
+const mapStateToProps = state => ({
+    //getting that null value as currentUser being passed in as currentUser
+    currentUser: state.user.currentUser
+})
+
+export default connect(mapStateToProps)(Header);
