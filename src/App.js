@@ -35,7 +35,7 @@ class App extends React.Component {
         //checking to see if user signs in
         //if there is document we will get document by userRef
         //if there is no document we will create it
-        const userRef = await createUserProfileDocument(userAuth);
+        const userRef = await createUserProfileDocument(userAuth)
         //since userref is being returned from our func we can use it to check to see if DB has updated at this reference with new data
 
         //moment it instantiates will send us snapshot of object in our DB
